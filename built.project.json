@@ -1,0 +1,7 @@
+{
+	"name": "greentea-utilities",
+	"tree": {
+		"$path": "Packages",
+		"GreenTeaUtilities": {"$path": "./default.project.json"}
+	}
+}

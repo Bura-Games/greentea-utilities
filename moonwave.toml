@@ -1,0 +1,48 @@
+autoSectionPath = "src"
+changelog = true
+gitSourceBranch = "main"
+title = "DairebStore3"
+
+[docusaurus]
+tagline = "The latest iteration of the DairebStore library."
+
+# [[navbar.items]]
+
+[home]
+enabled = true
+includeReadme = false
+
+[[home.features]]
+title = "Proper Documentation"
+description = "We have documentation now, as you can probably see."
+
+[[home.features]]
+title = "Simplified API"
+description = "The previous iteration was a nightmare to read and understand, so I've simplified the API down to a minimal version."
+
+[[home.features]]
+title = "Promise Support"
+description = "We have added support for the Promise API for blocking calls."
+
+[[home.features]]
+title = "Gifting API"
+description = "Thanks to the new usage of ProfileService, we have VERY easy gifting support."
+
+[[home.features]]
+title = "Strict Typing"
+description = "DairebStore2 was a mess with types, this version uses --!strict for everything."
+
+[[home.features]]
+title = "Improved Performance"
+description = "The performance of the library should be better due to better code and native mode."
+
+[[home.features]]
+title = ""
+description = ""
+
+[[home.features]]
+title = "Ultra Strict Mode"
+description = "For added protections against mistakes, you can enable the global ultra strict mode flag to get more errors."
+
+[footer]
+copyright = "Copyright © 2024 Bura Games. Made with Moonwave."
