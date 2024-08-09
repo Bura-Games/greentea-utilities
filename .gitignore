@@ -1,0 +1,17 @@
+# Roblox Studio lock files
+/*.rbxlx.lock
+/*.rbxl.lock
+**/*.rbx[lm]*
+dist/
+
+/Packages/
+DevPackages/
+build
+**/sourcemap.json
+roblox.yml
+
+*.code-workspace
+node_modules/
+built-project/
+built-release.project.json
+built-sourcemap.json

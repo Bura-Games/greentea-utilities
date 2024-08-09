@@ -1,0 +1,14 @@
+[package]
+name = "howmanysmall/greentea-utilities"
+version = "1.0.0"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+authors = ["HowManySmall <howmanysmall@gmail.com>"]
+exclude = ["**"]
+include = ["src", "src/**", "wally.toml", "wally.lock", "default.project.json", "LICENSE"]
+
+[dependencies]
+Debug = "howmanysmall/debug@1.0.1"
+GreenTea = "corecii/greentea@0.4.7"
+
+[dev-dependencies]
