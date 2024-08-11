@@ -1,5 +1,5 @@
 autoSectionPath = "src"
-changelog = true
+changelog = false
 gitSourceBranch = "main"
 title = "GreenTeaUtilities"
 

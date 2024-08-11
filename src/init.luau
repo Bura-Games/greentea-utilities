@@ -5,6 +5,7 @@ local IntersectionPlus = require(script.IntersectionPlus)
 local IsDataStoreSafe = require(script.IsDataStoreSafe)
 local IsDateTime = require(script.IsDateTime)
 local IsEnumItemOfType = require(script.IsEnumItemOfType)
+local IsMap = require(script.IsMap)
 local IsSet = require(script.IsSet)
 local UnionPlus = require(script.UnionPlus)
 
@@ -23,7 +24,9 @@ local GreenTeaUtilities = table.freeze({
 	IsDataStoreSafe = IsDataStoreSafe;
 	IsDateTime = IsDateTime;
 	IsEnumItemOfType = IsEnumItemOfType;
+	IsMap = IsMap;
 	IsSet = IsSet;
+	Map = IsMap;
 	Set = IsSet;
 	Union = UnionPlus;
 	UnionPlus = UnionPlus;
@@ -31,5 +34,6 @@ local GreenTeaUtilities = table.freeze({
 
 export type DataStoreSafe = IsDataStoreSafe.DataStoreSafe
 export type Set<K> = IsSet.Set<K>
+export type Map<K, V> = IsMap.Map<K, V>
 
 return GreenTeaUtilities

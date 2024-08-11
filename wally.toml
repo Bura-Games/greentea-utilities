@@ -1,6 +1,6 @@
 [package]
 name = "howmanysmall/greentea-utilities"
-version = "1.0.0"
+version = "1.1.0"
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
 authors = ["HowManySmall <howmanysmall@gmail.com>"]
