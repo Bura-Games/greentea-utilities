@@ -26,5 +26,5 @@ Using the RepoToRoblox plugin is the easiest way to install in Studio.
 
 ```toml
 [dependencies]
-GreenTeaUtilities = "howmanysmall/greentea-utilities@^1.1.0"
+GreenTeaUtilities = "howmanysmall/greentea-utilities@^1.3.0"
 ```
