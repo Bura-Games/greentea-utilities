@@ -1,6 +1,7 @@
 --!optimize 2
 --!strict
 
+local EasyLiteral = require(script.EasyLiteral)
 local IntersectionPlus = require(script.IntersectionPlus)
 local IsDataStoreSafe = require(script.IsDataStoreSafe)
 local IsDateTime = require(script.IsDateTime)
@@ -20,6 +21,7 @@ local UnionPlus = require(script.UnionPlus)
 	@class GreenTeaUtilities
 ]=]
 local GreenTeaUtilities = table.freeze({
+	EasyLiteral = EasyLiteral;
 	Intersection = IntersectionPlus;
 	IntersectionPlus = IntersectionPlus;
 	IsDataStoreSafe = IsDataStoreSafe;
