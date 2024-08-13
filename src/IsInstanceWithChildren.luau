@@ -30,6 +30,7 @@ end
 	})
 	```
 
+	@since v1.3.0
 	@function IsInstanceWithChildren
 	@within GreenTeaUtilities
 
