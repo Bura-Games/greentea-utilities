@@ -12,6 +12,9 @@ local GreenTea = require(script.Parent.Parent.GreenTea)
 ]=]
 export type Set<K> = {[K]: boolean}
 
+local IsLiteralTrueRaw = GreenTea.literal(true)
+local IsBooleanRaw = GreenTea.boolean()
+
 --[=[
 	Creates a GreenTea type that represents a set.
 
@@ -24,7 +27,7 @@ export type Set<K> = {[K]: boolean}
 ]=]
 local function IsSet<K>(keyType: K, literalSet: boolean?): Set<K>
 	return GreenTea.table({
-		[GreenTea.typeof(keyType)] = if literalSet then GreenTea.literal(true) else GreenTea.boolean();
+		[GreenTea.typeof(keyType)] = if literalSet then IsLiteralTrueRaw else IsBooleanRaw;
 	}, {})
 end
 

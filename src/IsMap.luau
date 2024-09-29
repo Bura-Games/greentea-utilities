@@ -13,10 +13,10 @@ export type Map<K, V> = {[K]: V}
 --[=[
 	Creates a GreenTea type that represents a map.
 
+	@since v1.1.0
 	@function IsMap
 	@within GreenTeaUtilities
 
-	@since v1.1.0
 	@param keyType K -- The type of the keys in the map.
 	@param valueType V -- The type of the values in the map.
 	@return Map<K, V>

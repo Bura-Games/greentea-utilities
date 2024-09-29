@@ -39,13 +39,13 @@ local function IsEnumItemOfType<T>(enumType: T, enumName: string)
 		end
 	end
 
-	return GreenTea.withCustom(enumType, function(value)
-		if typeof(value) ~= "EnumItem" then
-			return false, `expected an EnumItem, got {Debug.Inspect(value)}`
+	return GreenTea.withCustom(enumType, function(enumItem)
+		if typeof(enumItem) ~= "EnumItem" then
+			return false, `expected an EnumItem, got {Debug.Inspect(enumItem)}`
 		end
 
-		if not value:IsA(enumName) then
-			return false, `expected an EnumItem of type {enumName}, got {Debug.Inspect(value)}`
+		if not enumItem:IsA(enumName) then
+			return false, `expected an EnumItem of type {enumName}, got {Debug.Inspect(enumItem)}`
 		end
 
 		return true
