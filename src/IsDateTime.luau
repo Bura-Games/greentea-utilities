@@ -1,6 +1,7 @@
 --!optimize 2
 --!strict
 
+local Debug = require(script.Parent.Parent.Debug)
 local GreenTea = require(script.Parent.Parent.GreenTea)
 
 --[=[
@@ -11,9 +12,9 @@ local GreenTea = require(script.Parent.Parent.GreenTea)
 	@prop IsDateTime DateTime
 	@within GreenTeaUtilities
 ]=]
-local IsDateTime = GreenTea.withCustom(DateTime.now(), function(value)
-	if typeof(value) ~= "DateTime" then
-		return false, `expected DateTime, got {typeof(value)}`
+local IsDateTime = GreenTea.withCustom(DateTime.now(), function(dateTime)
+	if typeof(dateTime) ~= "DateTime" then
+		return false, `expected DateTime, got {Debug.Inspect(dateTime)}`
 	end
 
 	return true

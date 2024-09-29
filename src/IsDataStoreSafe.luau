@@ -1,9 +1,10 @@
 --!optimize 2
 --!strict
 
+local EnglishUtilities = require(script.Parent.Utilities.EnglishUtilities)
 local GreenTea = require(script.Parent.Parent.GreenTea)
 
-export type DataStoreSafe = nil | number | boolean | string | {DataStoreSafe} | {[string]: DataStoreSafe}
+export type DataStoreSafe = {DataStoreSafe} | {[string]: DataStoreSafe} | boolean | nil | number | string
 
 local NO_EXTRA_CHECKS = {
 	boolean = true;
@@ -31,20 +32,22 @@ type ScanResult = {
 	Extra: string?,
 }
 -- Also written by Corecii
-local function ScanValidity(object: any, passed: {[any]: true}?, path: {string}?): ScanResult
+local function ScanValidity(object: any, passed: {[unknown]: true}?, path: {string}?): ScanResult
 	if type(object) ~= "table" then
 		return ScanValidity({Input = object}, {}, {})
 	end
 
-	local truePassed: {[any]: true} = passed or {}
+	local truePassed: {[unknown]: true} = passed or {}
 	local truePath: {string} = path or {"Input"}
 
 	truePassed[object] = true
 	local tableType: "Array" | "Dictionary" = if type((next(object))) == "number" then "Array" else "Dictionary"
 	local last = 0
 
+	-- using next instead of generalized iterators because of __call metamethod
+	-- breaking generalized iterators
 	for key, value in next, object do
-		truePath[#truePath + 1] = tostring(key)
+		table.insert(truePath, tostring(key))
 		if type(key) == "number" then
 			if tableType == "Dictionary" then
 				return {
@@ -143,7 +146,7 @@ end
 
 --[=[
 	A type that indicates what is safe to store in a data store.
-	@type DataStoreSafe nil | number | boolean | string | {DataStoreSafe} | {[string]: DataStoreSafe}
+	@type DataStoreSafe {DataStoreSafe} | {[string]: DataStoreSafe} | boolean | nil | number | string
 	@within GreenTeaUtilities
 ]=]
 
@@ -180,7 +183,7 @@ local IsDataStoreSafe = GreenTea.withCustom(nil :: DataStoreSafe, function(value
 		return true
 	end
 
-	return false, `You cannot store a {typeOf} in data stores.`
+	return false, `You cannot store {EnglishUtilities.GetIndefiniteArticle(typeOf)} {typeOf} in data stores.`
 end, "DataStoreSafe")
 
 return IsDataStoreSafe

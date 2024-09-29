@@ -1,62 +1,58 @@
 --!optimize 2
 --!strict
 
+local AsGreenTeaType = require(script.Parent.Utilities.AsGreenTeaType)
 local Debug = require(script.Parent.Parent.Debug)
 local GreenTea = require(script.Parent.Parent.GreenTea)
 
-local function AsType(value: any)
-	if GreenTea.isGreenTeaType(value) then
-		return value
-	end
-
-	if value == nil then
-		return GreenTea.none()
-	end
-
-	if type(value) == "function" then
-		return GreenTea.custom(value)
-	end
-
-	return GreenTea.typeof(value)
-end
+local IsValidChildren = GreenTea.build({[GreenTea.string()] = GreenTea.unknown({allowNil = true})})
 
 --[=[
 	A type that checks if a value is an Instance of a given root type, and then
 	checks that all of the children are of the given types.
 
 	```lua
-	local IsModelWithHumanoidRaw = GreenTea.InstanceWithChildren(GreenTea.IsA.Model(), {
+	local IsModelWithHumanoidRaw = GreenTeaUtilities.IsInstanceWithChildren(GreenTea.IsA.Model(), {
 		Humanoid = GreenTea.IsA.Humanoid();
 	})
+	export type ModelWithHumanoid = typeof(IsModelWithHumanoidRaw)
 	```
 
 	@since v1.3.0
 	@function IsInstanceWithChildren
 	@within GreenTeaUtilities
 
-	@param root T -- The root type of the Instance.
-	@param children C -- A table of child types.
-	@return T & C -- This is actually a build-able GreenTea type.
+	@param root RootInstance -- The root type of the Instance.
+	@param children Children -- A table of child types.
+	@return RootInstance & Children -- This is actually a build-able GreenTea type.
 ]=]
-local function IsInstanceWithChildren<T, C>(root: T, children: C)
-	assert(type(children) == "table", "children must be a table.")
-	local childrenMapped = {}
-	for key, childType in children do
-		assert(type(key) == "string", "children keys must be strings.")
-		childrenMapped[key] = AsType(childType)
+local function IsInstanceWithChildren<RootInstance, Children>(root: RootInstance, children: Children): Children & RootInstance
+	do
+		local typeSuccess, typeError = IsValidChildren:matches(children)
+		if not typeSuccess then
+			error(typeError)
+		end
 	end
 
-	local rootType = AsType(root)
+	-- dear reader, please don't recreate this function every time you use it.
+	assert(type(children) == "table", "Luau")
 
-	return GreenTea.withCustom(rootType :: T & C, function(value)
-		if not value or typeof(value) ~= "Instance" then
-			return false, `expected an instance, got {Debug.Inspect(value)}`
+	local childrenTypeCheckers: {[string]: any} = {}
+	for key, childType in children do
+		childrenTypeCheckers[key] = AsGreenTeaType(childType)
+	end
+
+	local rootType = AsGreenTeaType(root)
+
+	return GreenTea.withCustom(rootType :: RootInstance & Children, function(instance)
+		if not instance or typeof(instance) ~= "Instance" then
+			return false, `expected an Instance, got {Debug.Inspect(instance)}`
 		end
 
-		for key, typeCheck in childrenMapped do
-			local child = value:FindFirstChild(key)
+		for key, typeCheck in childrenTypeCheckers do
+			local child = instance:FindFirstChild(key)
 			if not child then
-				return false, `missing child {key}`
+				return false, `missing child with name '{key}'`
 			end
 
 			local success, exception = typeCheck(child)
@@ -66,12 +62,13 @@ local function IsInstanceWithChildren<T, C>(root: T, children: C)
 		end
 
 		local existingChildren = {}
-		for _, child in value:GetChildren() do
-			if existingChildren[child.Name] then
-				return false, `duplicate child {child.Name}`
+		for _, child in instance:GetChildren() do
+			local name = child.Name
+			if existingChildren[name] then
+				return false, `duplicate child with name '{name}'`
 			end
 
-			existingChildren[child.Name] = true
+			existingChildren[name] = true
 		end
 
 		return true
