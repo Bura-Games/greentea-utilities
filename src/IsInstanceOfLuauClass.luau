@@ -2,6 +2,7 @@
 --!strict
 
 local Debug = require(script.Parent.Parent.Debug)
+local EnglishUtilities = require(script.Parent.Utilities.EnglishUtilities)
 local GreenTea = require(script.Parent.Parent.GreenTea)
 
 local IsMaybeString = GreenTea.build(GreenTea.optional(GreenTea.string()))
@@ -9,7 +10,6 @@ local IsTable = GreenTea.build(GreenTea.anyTable())
 
 type BaseClassSetup<T> = {
 	new: (...any?) -> T,
-	-- Is: ((value: any) -> boolean)?,
 	[any]: any,
 }
 
@@ -78,6 +78,9 @@ local function IsInstanceOfLuauClass<T>(luauClass: BaseClassSetup<T>, className:
 	end
 	assert(type(luauClass) == "table", "Luau")
 
+	local trueClassName = className or "class object"
+	local indefiniteArticle = if className then EnglishUtilities.GetIndefiniteArticle(className) else "a"
+
 	return GreenTea.withCustom((nil :: never) :: T, function(classObject)
 		local typeSuccess, typeError = IsTable:matches(classObject)
 		if not typeSuccess then
@@ -86,16 +89,20 @@ local function IsInstanceOfLuauClass<T>(luauClass: BaseClassSetup<T>, className:
 
 		local metatable = getmetatable(classObject)
 		if not metatable then
-			return false, `expected a class object with a metatable, got {Debug.Inspect(classObject)}`
+			return false,
+				`expected {indefiniteArticle} {trueClassName} with a metatable, got {Debug.Inspect(classObject)}`
 		end
 
 		if type(metatable) ~= "table" then
-			return false, `expected a class object with a table metatable, got {Debug.Inspect(metatable)}`
+			return false,
+				`expected {indefiniteArticle} {trueClassName} with a table metatable, got {Debug.Inspect(metatable)}`
 		end
 
 		if metatable.__index ~= luauClass then
 			return false,
-				`expected a class object with a metatable that indexes to {luauClass}, got {Debug.Inspect(metatable)}`
+				`expected {indefiniteArticle} {trueClassName} with a metatable that indexes to {luauClass}, got {Debug.Inspect(
+					metatable
+				)}`
 		end
 
 		return true
