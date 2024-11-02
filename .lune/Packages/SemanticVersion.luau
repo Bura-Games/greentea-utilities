@@ -1,6 +1,31 @@
---!native
 --!optimize 2
 --!strict
+
+local GreenTea = require("@packages/GreenTea")
+local LuauPolyfill = require("@packages/LuauPolyfill")
+local PathFileSystem = require("@packages/PathFileSystem")
+local serde = require("@lune/serde")
+
+local console = LuauPolyfill.console
+
+local isWallyPackage = GreenTea.build({
+	dependencies = GreenTea.optional({[GreenTea.string()] = GreenTea.string()});
+	["dev-dependencies"] = GreenTea.optional({[GreenTea.string()] = GreenTea.string()});
+	["server-dependencies"] = GreenTea.optional({[GreenTea.string()] = GreenTea.string()});
+	package = {
+		authors = GreenTea.optional(GreenTea.array(GreenTea.string()));
+		description = GreenTea.optional(GreenTea.string());
+		exclude = GreenTea.optional(GreenTea.array(GreenTea.string()));
+		include = GreenTea.optional(GreenTea.array(GreenTea.string()));
+		license = GreenTea.optional(GreenTea.union(GreenTea.literal("MIT"), GreenTea.literal("Apache-2.0"))) :: nil | "MIT" | "Apache-2.0";
+		name = GreenTea.string();
+		private = GreenTea.optional(GreenTea.boolean());
+		realm = GreenTea.union(GreenTea.literal("shared"), GreenTea.literal("server")) :: "shared" | "server";
+		registry = GreenTea.string();
+		version = GreenTea.string();
+	};
+})
+type WallyPackage = typeof(isWallyPackage:type())
 
 local function ParsePrereleaseAndBuildWithSign(value: string): (string, string)
 	local prereleaseWithSign, buildWithSign = string.match(value, "^(-[^+]+)(+.+)$")
@@ -141,25 +166,22 @@ local function SmallerPrerelease(mine: string?, other: string?)
 	return SmallerIdList(string.split(mine, "."), string.split(other, "."))
 end
 
-export type SemanticVersion = typeof(setmetatable(
-	{} :: {
-		Major: number,
-		Minor: number,
-		Patch: number,
-		Prerelease: string?,
-		Build: string?,
+export type SemanticVersion = typeof(setmetatable({} :: {
+	Major: number,
+	Minor: number,
+	Patch: number,
+	Prerelease: string?,
+	Build: string?,
 
-		NextMajor: (self: SemanticVersion) -> SemanticVersion,
-		NextMinor: (self: SemanticVersion) -> SemanticVersion,
-		NextPatch: (self: SemanticVersion) -> SemanticVersion,
-	},
-	{} :: {
-		__eq: (self: SemanticVersion, other: SemanticVersion) -> boolean,
-		__lt: (self: SemanticVersion, other: SemanticVersion) -> boolean,
-		__pow: (self: SemanticVersion, other: SemanticVersion) -> boolean,
-		__tostring: (self: SemanticVersion) -> string,
-	}
-))
+	NextMajor: (self: SemanticVersion) -> SemanticVersion,
+	NextMinor: (self: SemanticVersion) -> SemanticVersion,
+	NextPatch: (self: SemanticVersion) -> SemanticVersion,
+}, {} :: {
+	__eq: (self: SemanticVersion, other: SemanticVersion) -> boolean,
+	__lt: (self: SemanticVersion, other: SemanticVersion) -> boolean,
+	__pow: (self: SemanticVersion, other: SemanticVersion) -> boolean,
+	__tostring: (self: SemanticVersion) -> string,
+}))
 
 type BaseStatics = {
 	ClassName: "SemanticVersion",
@@ -170,6 +192,8 @@ type BaseStatics = {
 		prerelease: string?,
 		build: string?
 	) -> SemanticVersion,
+
+	FromWally: () -> SemanticVersion?,
 }
 type SemanticVersionStatics = BaseStatics & {
 	__eq: (self: SemanticVersion, other: SemanticVersion) -> boolean,
@@ -204,6 +228,34 @@ function SemanticVersion.new(
 	self.Build = build
 	table.freeze(self)
 	return (self :: any) :: SemanticVersion
+end
+
+local WALLY_TOML_PATH = PathFileSystem.Path.new("wally.toml")
+
+function SemanticVersion.FromWally()
+	if not PathFileSystem.IsFileSafe(WALLY_TOML_PATH) then
+		return nil
+	end
+
+	local readSuccess, fileSource = pcall(PathFileSystem.ReadFile, WALLY_TOML_PATH)
+	if not readSuccess then
+		console.warn(`Failed to read {WALLY_TOML_PATH} - {fileSource}`)
+		return nil
+	end
+
+	local decodeSuccess, toml: WallyPackage = pcall(serde.decode, "toml" :: "toml", fileSource)
+	if not decodeSuccess then
+		console.warn(`Failed to decode {WALLY_TOML_PATH} - {toml}`)
+		return nil
+	end
+
+	local typeSuccess, typeError = isWallyPackage:matches(toml)
+	if not typeSuccess then
+		console.warn(`Failed to type check {WALLY_TOML_PATH} - {typeError}`)
+		return nil
+	end
+
+	return SemanticVersion.new(toml.package.version)
 end
 
 function SemanticVersion:NextMajor(): SemanticVersion

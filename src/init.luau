@@ -4,11 +4,12 @@
 local EasyLiteral = require(script.EasyLiteral)
 local IntersectionPlus = require(script.IntersectionPlus)
 local IsDataStoreSafe = require(script.IsDataStoreSafe)
-local IsDateTime = require(script.IsDateTime)
+local IsDateTime = require(script.MissingTypes.IsDateTime)
 local IsEnumItemOfType = require(script.IsEnumItemOfType)
 local IsInstanceOfLuauClassFromTable = require(script.IsInstanceOfLuauClassFromTable)
 local IsInstanceWithChildren = require(script.IsInstanceWithChildren)
 local IsMap = require(script.IsMap)
+local IsSecret = require(script.MissingTypes.IsSecret)
 local IsSet = require(script.IsSet)
 local UnionPlus = require(script.UnionPlus)
 
@@ -31,6 +32,7 @@ local GreenTeaUtilities = table.freeze({
 	IsInstanceOfLuauClassFromTable = IsInstanceOfLuauClassFromTable;
 	IsInstanceWithChildren = IsInstanceWithChildren;
 	IsMap = IsMap;
+	IsSecret = IsSecret;
 	IsSet = IsSet;
 	Map = IsMap;
 	Set = IsSet;

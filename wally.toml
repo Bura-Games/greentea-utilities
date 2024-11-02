@@ -7,10 +7,10 @@ license = "MIT"
 name = "howmanysmall/greentea-utilities"
 realm = "shared"
 registry = "https://github.com/UpliftGames/wally-index"
-version = "1.5.0"
+version = "1.6.0"
 
 [dependencies]
 Debug = "howmanysmall/debug@1.0.1"
-GreenTea = "corecii/greentea@0.4.7"
+GreenTea = "corecii/greentea@0.4.10"
 
 [dev-dependencies]

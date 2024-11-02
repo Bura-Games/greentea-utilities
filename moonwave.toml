@@ -4,6 +4,7 @@ gitSourceBranch = "main"
 title = "GreenTeaUtilities"
 
 [docusaurus]
+baseUrl = "/greentea-utilities"
 tagline = "Utilities for the GreenTea library."
 
 # [[navbar.items]]
@@ -13,12 +14,12 @@ enabled = true
 includeReadme = false
 
 [[home.features]]
-title = "Missing Types"
 description = "GreenTea's missing types are included here."
+title = "Missing Types"
 
 [[home.features]]
-title = "Additional Types"
 description = "Additions such as Set and specific EnumItems are included."
+title = "Additional Types"
 
 [footer]
 copyright = "Copyright © 2024 Bura Games. Made with Moonwave."

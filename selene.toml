@@ -1,5 +1,5 @@
-std = "lune+testez"
 exclude = [".lune/*", ".typedefs/*"]
+std = "lune"
 
 [config]
 # Allow for `_G.__DEV__` (etc) with packages like React-lua
