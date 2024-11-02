@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="plugin-moonwave plugin-id-moonwave">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v2.3.1">
+<title data-rh="true">GreenTeaUtilities | GreenTeaUtilities</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://Bura-Games.github.io/greentea-utilities/api/GreenTeaUtilities"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docusaurus_tag" content="default"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docsearch:docusaurus_tag" content="default"><meta data-rh="true" property="og:title" content="GreenTeaUtilities | GreenTeaUtilities"><meta data-rh="true" name="description" content="Utilities for working with GreenTea. This can be many things, such as:
+
+- Missing types from the root
+- Fixed types
+- Custom types"><meta data-rh="true" property="og:description" content="Utilities for working with GreenTea. This can be many things, such as:
+
+- Missing types from the root
+- Fixed types
+- Custom types"><link data-rh="true" rel="canonical" href="https://Bura-Games.github.io/greentea-utilities/api/GreenTeaUtilities"><link data-rh="true" rel="alternate" href="https://Bura-Games.github.io/greentea-utilities/api/GreenTeaUtilities" hreflang="en"><link data-rh="true" rel="alternate" href="https://Bura-Games.github.io/greentea-utilities/api/GreenTeaUtilities" hreflang="x-default"><link rel="stylesheet" href="/greentea-utilities/assets/css/styles.e1adec2f.css">
+<link rel="preload" href="/greentea-utilities/assets/js/runtime~main.e5cb8015.js" as="script">
+<link rel="preload" href="/greentea-utilities/assets/js/main.c0cb0b77.js" as="script">
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function e(e){document.documentElement.setAttribute("data-theme",e)}var t=function(){var e=null;try{e=localStorage.getItem("theme")}catch(e){}return e}();null!==t?e(t):window.matchMedia("(prefers-color-scheme: dark)").matches?e("dark"):(window.matchMedia("(prefers-color-scheme: light)").matches,e("light"))}()</script><div id="__docusaurus">
+<div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/greentea-utilities/"><b class="navbar__title text--truncate">GreenTeaUtilities</b></a><a class="navbar__item navbar__link" href="/greentea-utilities/docs/intro">Docs</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/greentea-utilities/api/">API</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/Bura-Games/greentea-utilities" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="searchBox_ZlJk"><div class="navbar__search"><span aria-label="expand searchbar" role="button" class="search-icon" tabindex="0"></span><input type="search" id="search_input_react" placeholder="Loading..." aria-label="Search" class="navbar__search-input search-bar" disabled=""></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0 docPageContainer_wNNk"><div class="docPage_Dpn1"><div class="docSidebarContainer_o_re"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" href="/greentea-utilities/api/GreenTeaUtilities">​Green​Tea​Utilities</a></li></ul></nav></div></div><main class="docMainContainer_HJE1"><div class="container padding-vert--lg"><div class="row"><div class="col docItemCol_MU3C"><div class="docItemContainer_Wv98"><article><div class="member_J0w1 markdown"><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_oUs_"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><header><h1 class="docTitle_mZRt" style="text-decoration:none"><span style="display:inline-block">Green</span><span style="display:inline-block">Tea</span><span style="display:inline-block">Utilities</span></h1><div class="luaClassTags_EipM"></div><div>
+<p>Utilities for working with GreenTea. This can be many things, such as:</p>
+<ul>
+  <li>Missing types from the root</li>
+  <li>Fixed types</li>
+  <li>Custom types</li>
+</ul>
+</div></header><h2 class="anchor anchorWithStickyNavbar_LWe7" id="types">Types<a href="#types" class="hash-link" aria-label="Direct link to Types" title="Direct link to Types">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="DataStoreSafe"><code style="text-decoration:none">DataStoreSafe</code><a href="#DataStoreSafe" class="hash-link" aria-label="Direct link to DataStoreSafe" title="Direct link to DataStoreSafe">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Bura-Games/greentea-utilities/blob/main/src/IsDataStoreSafe.luau#L152"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>DataStoreSafe<!-- --> = </code> <code class="purple_ieR2">{</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/greentea-utilities/api/GreenTeaUtilities#DataStoreSafe">DataStoreSafe</a></code><code class="purple_ieR2">}</code><code class="op_lSLc"> | </code><code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">string</code><code>]</code></span><code>: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/greentea-utilities/api/GreenTeaUtilities#DataStoreSafe">DataStoreSafe</a></code><code class="purple_ieR2">}</code><code class="op_lSLc"> | </code><code class="blue_P4bS">boolean</code><code class="op_lSLc"> | </code><code class="blue_P4bS">nil</code><code class="op_lSLc"> | </code><code class="blue_P4bS">number</code><code class="op_lSLc"> | </code><code class="blue_P4bS">string</code></div><div>
+<p>A type that indicates what is safe to store in a data store.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Set&lt;K&gt;"><code style="text-decoration:none">Set&lt;K&gt;</code><a href="#Set&lt;K&gt;" class="hash-link" aria-label="Direct link to Set&lt;K&gt;" title="Direct link to Set&lt;K&gt;">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Bura-Games/greentea-utilities/blob/main/src/IsSet.luau#L13"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>Set&lt;K&gt;<!-- --> = </code> <code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">K</code><code>]</code></span><code>: </code><code class="blue_P4bS">boolean</code><code class="purple_ieR2">}</code></div><div>
+<p>
+  A type that represents a set. Technically, <code>boolean</code> is only going to be
+  <code>true</code>.
+</p>
+</div><h2 class="anchor anchorWithStickyNavbar_LWe7" id="properties">Properties<a href="#properties" class="hash-link" aria-label="Direct link to Properties" title="Direct link to Properties">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="IsDataStoreSafe"><code style="text-decoration:none">IsDataStoreSafe</code><a href="#IsDataStoreSafe" class="hash-link" aria-label="Direct link to IsDataStoreSafe" title="Direct link to IsDataStoreSafe">​</a></h3><span class="badge_Ba2I" style="color:#e74c3c"><span class="badgeTooltip_cWXP">This item is read only and cannot be modified.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" height="300px" width="300px" fill="#e74c3c" x="0px" y="0px" viewBox="0 0 96 96"><path d="M70.354,15.662h-7.496H25.566c-3.282,0-5.19-0.776-5.728-1.169v-1.456c0.538-0.393,2.445-1.168,5.728-1.168h46.479V8H25.566  c-4.776,0-9.594,1.468-9.594,4.747v61.458C15.972,86.645,20.328,88,37.495,88h42.535V15.662H70.354z"></path></svg> <!-- -->Read Only</span></span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Bura-Games/greentea-utilities/blob/main/src/IsDataStoreSafe.luau#L171"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>GreenTeaUtilities<!-- -->.<!-- -->IsDataStoreSafe<!-- -->:<!-- --> </code> <code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/greentea-utilities/api/GreenTeaUtilities#DataStoreSafe">DataStoreSafe</a></code></div><div>
+<p>Makes sure that the given value is safe to store in a data store.</p>
+<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> IsDataStoreSafe <span class="token operator">=</span> GreenTea<span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span>GreenTeaUtilities<span class="token punctuation">.</span>IsDataStoreSafe<span class="token punctuation">)</span>
+IsDataStoreSafe<span class="token punctuation">:</span><span class="token function">assert</span><span class="token punctuation">(</span><span class="token keyword">nil</span><span class="token punctuation">)</span>
+IsDataStoreSafe<span class="token punctuation">:</span><span class="token function">assert</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+IsDataStoreSafe<span class="token punctuation">:</span><span class="token function">assert</span><span class="token punctuation">(</span><span class="token string">"hi"</span><span class="token punctuation">)</span>
+IsDataStoreSafe<span class="token punctuation">:</span><span class="token function">assert</span><span class="token punctuation">(</span><span class="token punctuation">{</span>IsDataStoreSafe <span class="token operator">=</span> <span class="token keyword">true</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+IsDataStoreSafe<span class="token punctuation">:</span><span class="token function">assert</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+IsDataStoreSafe<span class="token punctuation">:</span><span class="token function">assert</span><span class="token punctuation">(</span><span class="token punctuation">{</span>IsDataStoreSafe <span class="token operator">=</span> <span class="token keyword">true</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment">-- fails</span>
+IsDataStoreSafe<span class="token punctuation">:</span><span class="token function">assert</span><span class="token punctuation">(</span>Vector3<span class="token punctuation">.</span>zero<span class="token punctuation">)</span> <span class="token comment">-- fails</span>
+</code></pre>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="IsDateTime"><code style="text-decoration:none">IsDateTime</code><a href="#IsDateTime" class="hash-link" aria-label="Direct link to IsDateTime" title="Direct link to IsDateTime">​</a></h3><span class="badge_Ba2I" style="color:#e74c3c"><span class="badgeTooltip_cWXP">This item is read only and cannot be modified.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" height="300px" width="300px" fill="#e74c3c" x="0px" y="0px" viewBox="0 0 96 96"><path d="M70.354,15.662h-7.496H25.566c-3.282,0-5.19-0.776-5.728-1.169v-1.456c0.538-0.393,2.445-1.168,5.728-1.168h46.479V8H25.566  c-4.776,0-9.594,1.468-9.594,4.747v61.458C15.972,86.645,20.328,88,37.495,88h42.535V15.662H70.354z"></path></svg> <!-- -->Read Only</span></span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Bura-Games/greentea-utilities/blob/main/src/MissingTypes/IsDateTime.luau#L15"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>GreenTeaUtilities<!-- -->.<!-- -->IsDateTime<!-- -->:<!-- --> </code> <code class="blue_P4bS">DateTime</code></div><div>
+<p>
+  A GreenTea type to match against a DateTime type. This was missing from the
+  GreenTea library.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="IsSecret"><code style="text-decoration:none">IsSecret</code><a href="#IsSecret" class="hash-link" aria-label="Direct link to IsSecret" title="Direct link to IsSecret">​</a></h3><span class="badge_Ba2I" style="color:#e74c3c"><span class="badgeTooltip_cWXP">This item is read only and cannot be modified.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" height="300px" width="300px" fill="#e74c3c" x="0px" y="0px" viewBox="0 0 96 96"><path d="M70.354,15.662h-7.496H25.566c-3.282,0-5.19-0.776-5.728-1.169v-1.456c0.538-0.393,2.445-1.168,5.728-1.168h46.479V8H25.566  c-4.776,0-9.594,1.468-9.594,4.747v61.458C15.972,86.645,20.328,88,37.495,88h42.535V15.662H70.354z"></path></svg> <!-- -->Read Only</span></span><div class="repositoryDetailsContainer_BPdw"><span class="releaseVersion_EonW">since <!-- -->v1.6.0</span><a class="sourceButton_sEho" href="https://github.com/Bura-Games/greentea-utilities/blob/main/src/MissingTypes/IsSecret.luau#L16"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>GreenTeaUtilities<!-- -->.<!-- -->IsSecret<!-- -->:<!-- --> </code> <code class="blue_P4bS">Secret</code></div><div>
+<p>
+  A GreenTea type to match against a Secret type. This was missing from the
+  GreenTea library.
+</p>
+</div><h2 class="anchor anchorWithStickyNavbar_LWe7" id="functions">Functions<a href="#functions" class="hash-link" aria-label="Direct link to Functions" title="Direct link to Functions">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="IsEnumItemOfType"><code style="text-decoration:none">IsEnumItemOfType</code><a href="#IsEnumItemOfType" class="hash-link" aria-label="Direct link to IsEnumItemOfType" title="Direct link to IsEnumItemOfType">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Bura-Games/greentea-utilities/blob/main/src/IsEnumItemOfType.luau#L30"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>GreenTeaUtilities<!-- -->.</code><code class="green_DgR4">IsEnumItemOfType</code><code>(</code><div class="inset_uKQm"><div><code>enumType<!-- -->: </code><code class="blue_P4bS">T</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>The EnumItem. You will have to cast.</p>
+</span></span></div><div><code>enumName<!-- -->: </code><code class="blue_P4bS">string</code><span class="inlineDescription_G7Er">-- <span>
+<p>The name of the EnumItem.</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS">T</code><span class="inlineDescription_G7Er">-- <span>
+<p>This is actually a build-able GreenTea type.</p>
+</span></span></div><div>
+<p>A custom GreenTea type that matches against an EnumItem type.</p>
+<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> IsTextXAlignmentRaw <span class="token operator">=</span> GreenTeaUtilities<span class="token punctuation">.</span><span class="token function">IsEnumItemOfType</span><span class="token punctuation">(</span>
+	Enum<span class="token punctuation">.</span>TextXAlignment<span class="token punctuation">.</span>Center <span class="token punctuation">::</span> Enum<span class="token punctuation">.</span>TextXAlignment<span class="token punctuation">,</span> <span class="token comment">-- casting required</span>
+	<span class="token string">"TextXAlignment"</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">local</span> IsTextXAlignment <span class="token operator">=</span> GreenTea<span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span>IsTextXAlignmentRaw<span class="token punctuation">)</span>
+export type TextXAlignment <span class="token operator">=</span> <span class="token function">typeof</span><span class="token punctuation">(</span>IsTextXAlignment<span class="token punctuation">:</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="IsInstanceOfLuauClassFromTable"><code style="text-decoration:none">IsInstanceOfLuauClassFromTable</code><a href="#IsInstanceOfLuauClassFromTable" class="hash-link" aria-label="Direct link to IsInstanceOfLuauClassFromTable" title="Direct link to IsInstanceOfLuauClassFromTable">​</a></h3><div class="repositoryDetailsContainer_BPdw"><span class="releaseVersion_EonW">since <!-- -->v1.5.0</span><a class="sourceButton_sEho" href="https://github.com/Bura-Games/greentea-utilities/blob/main/src/IsInstanceOfLuauClassFromTable.luau#L59"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>GreenTeaUtilities<!-- -->.</code><code class="green_DgR4">IsInstanceOfLuauClassFromTable</code><code>(</code><div class="inset_uKQm"><div><code>luauClass<!-- -->: </code><code class="purple_ieR2">{</code><code>new<!-- -->: </code><code class="green_DgR4">(</code><code class="blue_P4bS">...any</code><code class="green_DgR4">)</code><code class="green_DgR4"> → </code><code class="blue_P4bS">T</code><code class="purple_ieR2">}</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>The root table of the class.</p>
+</span></span></div><div><code>className?<!-- -->: </code><code class="blue_P4bS">string</code><span class="inlineDescription_G7Er">-- <span>
+<p>The name of the class. If not provided, the name will be inferred from the class somehow.</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS">T</code><span class="inlineDescription_G7Er">-- <span>
+<p>This is actually a build-able GreenTea type.</p>
+</span></span></div><div>
+<p>
+  A type that checks if a value is an instance of a given Luau metatable
+  class. This requires a table to have a <code>new</code> function.
+</p>
+<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> BasicClass <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+BasicClass<span class="token punctuation">.</span>__index <span class="token operator">=</span> BasicClass
+
+<span class="token keyword">function</span> BasicClass<span class="token punctuation">.</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token keyword">return</span> <span class="token function">setmetatable</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> BasicClass<span class="token punctuation">)</span>
+<span class="token keyword">end</span>
+
+<span class="token keyword">function</span> BasicClass<span class="token punctuation">:</span><span class="token function">Print</span><span class="token punctuation">(</span><span class="token punctuation">...</span><span class="token punctuation">:</span> unknown<span class="token punctuation">)</span>
+	<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"[BasicClass] -"</span><span class="token punctuation">,</span> <span class="token punctuation">...</span><span class="token punctuation">)</span>
+<span class="token keyword">end</span>
+
+<span class="token keyword">local</span> IsBasicClassRaw <span class="token operator">=</span> GreenTeaUtilities<span class="token punctuation">.</span><span class="token function">IsInstanceOfLuauClassFromTable</span><span class="token punctuation">(</span>BasicClass<span class="token punctuation">)</span>
+export type BasicClass <span class="token operator">=</span> <span class="token function">typeof</span><span class="token punctuation">(</span>IsBasicClassRaw<span class="token punctuation">)</span>
+</code></pre>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="IsMap"><code style="text-decoration:none">IsMap</code><a href="#IsMap" class="hash-link" aria-label="Direct link to IsMap" title="Direct link to IsMap">​</a></h3><div class="repositoryDetailsContainer_BPdw"><span class="releaseVersion_EonW">since <!-- -->v1.1.0</span><a class="sourceButton_sEho" href="https://github.com/Bura-Games/greentea-utilities/blob/main/src/IsMap.luau#L19"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>GreenTeaUtilities<!-- -->.</code><code class="green_DgR4">IsMap</code><code>(</code><div class="inset_uKQm"><div><code>keyType<!-- -->: </code><code class="blue_P4bS">K</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>The type of the keys in the map.</p>
+</span></span></div><div><code>valueType<!-- -->: </code><code class="blue_P4bS">V</code><span class="inlineDescription_G7Er">-- <span>
+<p>The type of the values in the map.</p>
+</span></span></div></div><code>) → </code><code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">K</code><code>]</code></span><code>: </code><code class="blue_P4bS">V</code><code class="purple_ieR2">}</code></div><div>
+<p>Creates a GreenTea type that represents a map.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="UnionPlus"><code style="text-decoration:none">UnionPlus</code><a href="#UnionPlus" class="hash-link" aria-label="Direct link to UnionPlus" title="Direct link to UnionPlus">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Bura-Games/greentea-utilities/blob/main/src/UnionPlus.luau#L49"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>GreenTeaUtilities<!-- -->.</code><code class="green_DgR4">UnionPlus</code><code>(</code><div class="inset_uKQm"><div><code>...<!-- -->: </code><code class="blue_P4bS">...T</code><span class="inlineDescription_G7Er">-- <span>
+<p>The unioned types.</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS">T</code><span class="inlineDescription_G7Er">-- <span>
+<p>This is actually a build-able GreenTea type.</p>
+</span></span></div><div>
+<p>
+  An expanded version of <code>GreenTea.union</code>. It just expands the type
+  definition to include more possible types (10).
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="IsInstanceWithChildren"><code style="text-decoration:none">IsInstanceWithChildren</code><a href="#IsInstanceWithChildren" class="hash-link" aria-label="Direct link to IsInstanceWithChildren" title="Direct link to IsInstanceWithChildren">​</a></h3><div class="repositoryDetailsContainer_BPdw"><span class="releaseVersion_EonW">since <!-- -->v1.3.0</span><a class="sourceButton_sEho" href="https://github.com/Bura-Games/greentea-utilities/blob/main/src/IsInstanceWithChildren.luau#L29"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>GreenTeaUtilities<!-- -->.</code><code class="green_DgR4">IsInstanceWithChildren</code><code>(</code><div class="inset_uKQm"><div><code>root<!-- -->: </code><code class="blue_P4bS">RootInstance</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>The root type of the Instance.</p>
+</span></span></div><div><code>children<!-- -->: </code><code class="blue_P4bS">Children</code><span class="inlineDescription_G7Er">-- <span>
+<p>A table of child types.</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS">RootInstance</code><code class="blue_P4bS">&amp;</code><code class="blue_P4bS">Children</code><span class="inlineDescription_G7Er">-- <span>
+<p>This is actually a build-able GreenTea type.</p>
+</span></span></div><div>
+<p>
+  A type that checks if a value is an Instance of a given root type, and then
+  checks that all of the children are of the given types.
+</p>
+<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> IsModelWithHumanoidRaw <span class="token operator">=</span> GreenTeaUtilities<span class="token punctuation">.</span><span class="token function">IsInstanceWithChildren</span><span class="token punctuation">(</span>GreenTea<span class="token punctuation">.</span>IsA<span class="token punctuation">.</span><span class="token function">Model</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+	Humanoid <span class="token operator">=</span> GreenTea<span class="token punctuation">.</span>IsA<span class="token punctuation">.</span><span class="token function">Humanoid</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+export type ModelWithHumanoid <span class="token operator">=</span> <span class="token function">typeof</span><span class="token punctuation">(</span>IsModelWithHumanoidRaw<span class="token punctuation">)</span>
+</code></pre>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="EasyLiteral"><code style="text-decoration:none">EasyLiteral</code><a href="#EasyLiteral" class="hash-link" aria-label="Direct link to EasyLiteral" title="Direct link to EasyLiteral">​</a></h3><div class="repositoryDetailsContainer_BPdw"><span class="releaseVersion_EonW">since <!-- -->1.4.0</span><a class="sourceButton_sEho" href="https://github.com/Bura-Games/greentea-utilities/blob/main/src/EasyLiteral.luau#L26"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>GreenTeaUtilities<!-- -->.</code><code class="green_DgR4">EasyLiteral</code><code>(</code><div class="inset_uKQm"><div><code>...<!-- -->: </code><code class="blue_P4bS">...T</code><span class="inlineDescription_G7Er">-- <span>
+<p>The types to union.</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS">T</code><span class="inlineDescription_G7Er">-- <span>
+<p>This is actually a build-able GreenTea type.</p>
+</span></span></div><div>
+<p>A utility function that makes making literal unions easier.</p>
+<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> IsMethodRaw <span class="token operator">=</span> GreenTeaUtilities<span class="token punctuation">.</span><span class="token function">EasyLiteral</span><span class="token punctuation">(</span><span class="token string">"Method"</span><span class="token punctuation">,</span> <span class="token string">"Function"</span><span class="token punctuation">)</span> <span class="token punctuation">::</span> <span class="token string">"Method"</span> <span class="token operator">|</span> <span class="token string">"Function"</span>
+</code></pre>
+<div class="admonition admonition-warning alert alert--danger">
+  <div class="admonition-heading">
+    <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16">
+          <path d="M5.05.31c.81 2.17.41 3.38-.52 4.31C3.55 5.67 1.98 6.45.9 7.98c-1.45 2.05-1.7 6.53 3.53 7.7-2.2-1.16-2.67-4.52-.3-6.61-.61 2.03.53 3.33 1.94 2.86 1.39-.47 2.3.53 2.27 1.67-.02.78-.31 1.44-1.13 1.81 3.42-.59 4.78-3.42 4.78-5.56 0-2.84-2.53-3.22-1.25-5.61-1.52.13-2.03 1.13-1.89 2.75.09 1.08-1.02 1.8-1.86 1.33-.67-.41-.66-1.19-.06-1.78C8.18 5.31 8.68 2.45 5.05.32L5.03.3l.02.01z"></path>
+        </svg></span>String Literals</h5>
+  </div>
+  <div class="admonition-content">
+    <p>
+      As of writing this, Luau string literals are... not very good. You will
+      likely have to fight the type system to make it so that the string literals
+      are not <code>string | string</code> instead of the actual literal type.
+    </p>
+  </div>
+</div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="IsSet"><code style="text-decoration:none">IsSet</code><a href="#IsSet" class="hash-link" aria-label="Direct link to IsSet" title="Direct link to IsSet">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Bura-Games/greentea-utilities/blob/main/src/IsSet.luau#L28"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>GreenTeaUtilities<!-- -->.</code><code class="green_DgR4">IsSet</code><code>(</code><div class="inset_uKQm"><div><code>keyType<!-- -->: </code><code class="blue_P4bS">K</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>The type of the keys in the set.</p>
+</span></span></div><div><code>literalSet?<!-- -->: </code><code class="blue_P4bS">boolean</code><span class="inlineDescription_G7Er">-- <span>
+<p>Whether the set is literally equal to a set. If it is <code>true</code>, the values of the set are expected to be <code>true</code>.</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS">Set</code><code class="op_lSLc">&lt;</code><code class="blue_P4bS">K</code><code class="op_lSLc">&gt;</code></div><div>
+<p>Creates a GreenTea type that represents a set.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="IntersectionPlus"><code style="text-decoration:none">IntersectionPlus</code><a href="#IntersectionPlus" class="hash-link" aria-label="Direct link to IntersectionPlus" title="Direct link to IntersectionPlus">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Bura-Games/greentea-utilities/blob/main/src/IntersectionPlus.luau#L49"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>GreenTeaUtilities<!-- -->.</code><code class="green_DgR4">IntersectionPlus</code><code>(</code><div class="inset_uKQm"><div><code>...<!-- -->: </code><code class="blue_P4bS">...T</code><span class="inlineDescription_G7Er">-- <span>
+<p>The intersecting types.</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS">T</code><span class="inlineDescription_G7Er">-- <span>
+<p>This is actually a build-able GreenTea type.</p>
+</span></span></div><div>
+<p>
+  An expanded version of <code>GreenTea.intersection</code>. It just expands the type
+  definition to include more possible types (10).
+</p>
+</div></div></article></div><details><summary>Show raw api</summary><pre style="max-width:100%;white-space:pre-wrap">{
+    &quot;functions&quot;: [
+        {
+            &quot;name&quot;: &quot;IsEnumItemOfType&quot;,
+            &quot;desc&quot;: &quot;A custom GreenTea type that matches against an EnumItem type.\n\n```lua\nlocal IsTextXAlignmentRaw = GreenTeaUtilities.IsEnumItemOfType(\n\tEnum.TextXAlignment.Center :: Enum.TextXAlignment, -- casting required\n\t\&quot;TextXAlignment\&quot;\n)\n\nlocal IsTextXAlignment = GreenTea.build(IsTextXAlignmentRaw)\nexport type TextXAlignment = typeof(IsTextXAlignment:type())\n```&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;enumType&quot;,
+                    &quot;desc&quot;: &quot;The EnumItem. You will have to cast.&quot;,
+                    &quot;lua_type&quot;: &quot;T&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;enumName&quot;,
+                    &quot;desc&quot;: &quot;The name of the EnumItem.&quot;,
+                    &quot;lua_type&quot;: &quot;string&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;This is actually a build-able GreenTea type.&quot;,
+                    &quot;lua_type&quot;: &quot;T&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 30,
+                &quot;path&quot;: &quot;src/IsEnumItemOfType.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;IsInstanceOfLuauClassFromTable&quot;,
+            &quot;desc&quot;: &quot;A type that checks if a value is an instance of a given Luau metatable\nclass. This requires a table to have a `new` function.\n\n```lua\nlocal BasicClass = {}\nBasicClass.__index = BasicClass\n\nfunction BasicClass.new()\n\treturn setmetatable({}, BasicClass)\nend\n\nfunction BasicClass:Print(...: unknown)\n\tprint(\&quot;[BasicClass] -\&quot;, ...)\nend\n\nlocal IsBasicClassRaw = GreenTeaUtilities.IsInstanceOfLuauClassFromTable(BasicClass)\nexport type BasicClass = typeof(IsBasicClassRaw)\n```&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;luauClass&quot;,
+                    &quot;desc&quot;: &quot;The root table of the class.&quot;,
+                    &quot;lua_type&quot;: &quot;{new: (...any) -&gt; T}&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;className?&quot;,
+                    &quot;desc&quot;: &quot;The name of the class. If not provided, the name will be inferred from the class somehow.&quot;,
+                    &quot;lua_type&quot;: &quot;string&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;This is actually a build-able GreenTea type.&quot;,
+                    &quot;lua_type&quot;: &quot;T&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;since&quot;: &quot;v1.5.0&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 59,
+                &quot;path&quot;: &quot;src/IsInstanceOfLuauClassFromTable.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;IsMap&quot;,
+            &quot;desc&quot;: &quot;Creates a GreenTea type that represents a map.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;keyType&quot;,
+                    &quot;desc&quot;: &quot;The type of the keys in the map.&quot;,
+                    &quot;lua_type&quot;: &quot;K&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;valueType&quot;,
+                    &quot;desc&quot;: &quot;The type of the values in the map.&quot;,
+                    &quot;lua_type&quot;: &quot;V&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;{[K]: V}&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;since&quot;: &quot;v1.1.0&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 19,
+                &quot;path&quot;: &quot;src/IsMap.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;UnionPlus&quot;,
+            &quot;desc&quot;: &quot;An expanded version of `GreenTea.union`. It just expands the type\ndefinition to include more possible types (10).&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;...&quot;,
+                    &quot;desc&quot;: &quot;The unioned types.&quot;,
+                    &quot;lua_type&quot;: &quot;...T&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;This is actually a build-able GreenTea type.&quot;,
+                    &quot;lua_type&quot;: &quot;T&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 49,
+                &quot;path&quot;: &quot;src/UnionPlus.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;IsInstanceWithChildren&quot;,
+            &quot;desc&quot;: &quot;A type that checks if a value is an Instance of a given root type, and then\nchecks that all of the children are of the given types.\n\n```lua\nlocal IsModelWithHumanoidRaw = GreenTeaUtilities.IsInstanceWithChildren(GreenTea.IsA.Model(), {\n\tHumanoid = GreenTea.IsA.Humanoid();\n})\nexport type ModelWithHumanoid = typeof(IsModelWithHumanoidRaw)\n```&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;root&quot;,
+                    &quot;desc&quot;: &quot;The root type of the Instance.&quot;,
+                    &quot;lua_type&quot;: &quot;RootInstance&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;children&quot;,
+                    &quot;desc&quot;: &quot;A table of child types.&quot;,
+                    &quot;lua_type&quot;: &quot;Children&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;This is actually a build-able GreenTea type.&quot;,
+                    &quot;lua_type&quot;: &quot;RootInstance &amp; Children&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;since&quot;: &quot;v1.3.0&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 29,
+                &quot;path&quot;: &quot;src/IsInstanceWithChildren.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;EasyLiteral&quot;,
+            &quot;desc&quot;: &quot;A utility function that makes making literal unions easier.\n\n```lua\nlocal IsMethodRaw = GreenTeaUtilities.EasyLiteral(\&quot;Method\&quot;, \&quot;Function\&quot;) :: \&quot;Method\&quot; | \&quot;Function\&quot;\n```\n\n:::warning String Literals\nAs of writing this, Luau string literals are... not very good. You will\nlikely have to fight the type system to make it so that the string literals\nare not `string | string` instead of the actual literal type.\n:::&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;...&quot;,
+                    &quot;desc&quot;: &quot;The types to union.&quot;,
+                    &quot;lua_type&quot;: &quot;...T&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;This is actually a build-able GreenTea type.&quot;,
+                    &quot;lua_type&quot;: &quot;T&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;since&quot;: &quot;1.4.0&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 26,
+                &quot;path&quot;: &quot;src/EasyLiteral.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;IsSet&quot;,
+            &quot;desc&quot;: &quot;Creates a GreenTea type that represents a set.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;keyType&quot;,
+                    &quot;desc&quot;: &quot;The type of the keys in the set.&quot;,
+                    &quot;lua_type&quot;: &quot;K&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;literalSet?&quot;,
+                    &quot;desc&quot;: &quot;Whether the set is literally equal to a set. If it is `true`, the values of the set are expected to be `true`.&quot;,
+                    &quot;lua_type&quot;: &quot;boolean&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;Set&lt;K&gt;&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 28,
+                &quot;path&quot;: &quot;src/IsSet.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;IntersectionPlus&quot;,
+            &quot;desc&quot;: &quot;An expanded version of `GreenTea.intersection`. It just expands the type\ndefinition to include more possible types (10).&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;...&quot;,
+                    &quot;desc&quot;: &quot;The intersecting types.&quot;,
+                    &quot;lua_type&quot;: &quot;...T&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;This is actually a build-able GreenTea type.&quot;,
+                    &quot;lua_type&quot;: &quot;T&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 49,
+                &quot;path&quot;: &quot;src/IntersectionPlus.luau&quot;
+            }
+        }
+    ],
+    &quot;properties&quot;: [
+        {
+            &quot;name&quot;: &quot;IsDataStoreSafe&quot;,
+            &quot;desc&quot;: &quot;Makes sure that the given value is safe to store in a data store.\n\n```lua\nlocal IsDataStoreSafe = GreenTea.build(GreenTeaUtilities.IsDataStoreSafe)\nIsDataStoreSafe:assert(nil)\nIsDataStoreSafe:assert(1)\nIsDataStoreSafe:assert(\&quot;hi\&quot;)\nIsDataStoreSafe:assert({IsDataStoreSafe = true})\nIsDataStoreSafe:assert({1, 2, 3})\nIsDataStoreSafe:assert({IsDataStoreSafe = true, 1, 2, 3}) -- fails\nIsDataStoreSafe:assert(Vector3.zero) -- fails\n```&quot;,
+            &quot;lua_type&quot;: &quot;DataStoreSafe&quot;,
+            &quot;readonly&quot;: true,
+            &quot;source&quot;: {
+                &quot;line&quot;: 171,
+                &quot;path&quot;: &quot;src/IsDataStoreSafe.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;IsDateTime&quot;,
+            &quot;desc&quot;: &quot;A GreenTea type to match against a DateTime type. This was missing from the\nGreenTea library.&quot;,
+            &quot;lua_type&quot;: &quot;DateTime&quot;,
+            &quot;readonly&quot;: true,
+            &quot;source&quot;: {
+                &quot;line&quot;: 15,
+                &quot;path&quot;: &quot;src/MissingTypes/IsDateTime.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;IsSecret&quot;,
+            &quot;desc&quot;: &quot;A GreenTea type to match against a Secret type. This was missing from the\nGreenTea library.&quot;,
+            &quot;lua_type&quot;: &quot;Secret&quot;,
+            &quot;since&quot;: &quot;v1.6.0&quot;,
+            &quot;readonly&quot;: true,
+            &quot;source&quot;: {
+                &quot;line&quot;: 16,
+                &quot;path&quot;: &quot;src/MissingTypes/IsSecret.luau&quot;
+            }
+        }
+    ],
+    &quot;types&quot;: [
+        {
+            &quot;name&quot;: &quot;DataStoreSafe&quot;,
+            &quot;desc&quot;: &quot;A type that indicates what is safe to store in a data store.&quot;,
+            &quot;lua_type&quot;: &quot;{DataStoreSafe} | {[string]: DataStoreSafe} | boolean | nil | number | string&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 152,
+                &quot;path&quot;: &quot;src/IsDataStoreSafe.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;Set&lt;K&gt;&quot;,
+            &quot;desc&quot;: &quot;A type that represents a set. Technically, `boolean` is only going to be\n`true`.&quot;,
+            &quot;lua_type&quot;: &quot;{[K]: boolean}&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 13,
+                &quot;path&quot;: &quot;src/IsSet.luau&quot;
+            }
+        }
+    ],
+    &quot;name&quot;: &quot;GreenTeaUtilities&quot;,
+    &quot;desc&quot;: &quot;Utilities for working with GreenTea. This can be many things, such as:\n\n- Missing types from the root\n- Fixed types\n- Custom types&quot;,
+    &quot;source&quot;: {
+        &quot;line&quot;: 25,
+        &quot;path&quot;: &quot;src/init.luau&quot;
+    }
+}</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a><ul><li><a href="#DataStoreSafe" class="table-of-contents__link toc-highlight">DataStoreSafe</a></li><li><a href="#Set&lt;K&gt;" class="table-of-contents__link toc-highlight">Set<k></k></a></li></ul></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a><ul><li><a href="#IsDataStoreSafe" class="table-of-contents__link toc-highlight">IsDataStoreSafe</a></li><li><a href="#IsDateTime" class="table-of-contents__link toc-highlight">IsDateTime</a></li><li><a href="#IsSecret" class="table-of-contents__link toc-highlight">IsSecret</a></li></ul></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#EasyLiteral" class="table-of-contents__link toc-highlight">.EasyLiteral</a></li><li><a href="#IntersectionPlus" class="table-of-contents__link toc-highlight">.IntersectionPlus</a></li><li><a href="#IsEnumItemOfType" class="table-of-contents__link toc-highlight">.IsEnumItemOfType</a></li><li><a href="#IsInstanceOfLuauClassFromTable" class="table-of-contents__link toc-highlight">.IsInstanceOfLuauClassFromTable</a></li><li><a href="#IsInstanceWithChildren" class="table-of-contents__link toc-highlight">.IsInstanceWithChildren</a></li><li><a href="#IsMap" class="table-of-contents__link toc-highlight">.IsMap</a></li><li><a href="#IsSet" class="table-of-contents__link toc-highlight">.IsSet</a></li><li><a href="#UnionPlus" class="table-of-contents__link toc-highlight">.UnionPlus</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2024 Bura Games. Made with Moonwave.</div></div></div></footer></div>
+<script src="/greentea-utilities/assets/js/runtime~main.e5cb8015.js"></script>
+<script src="/greentea-utilities/assets/js/main.c0cb0b77.js"></script>
+</body>
+</html>
