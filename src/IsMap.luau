@@ -3,11 +3,6 @@
 
 local GreenTea = require(script.Parent.Parent.GreenTea)
 
---[=[
-	A type that represents a map.
-	@type Map<K, V> {[K]: V}
-	@within GreenTeaUtilities
-]=]
 export type Map<K, V> = {[K]: V}
 
 --[=[
@@ -19,7 +14,7 @@ export type Map<K, V> = {[K]: V}
 
 	@param keyType K -- The type of the keys in the map.
 	@param valueType V -- The type of the values in the map.
-	@return Map<K, V>
+	@return {[K]: V}
 ]=]
 local function IsMap<K, V>(keyType: K, valueType: V): Map<K, V>
 	return GreenTea.table({
